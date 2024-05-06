@@ -7,7 +7,7 @@ from src.auth.models import User
 
 cookie_transport = CookieTransport(cookie_name='Clothing_store', cookie_max_age=3600)
 
-SECRET = config.JWT_SECRET_KEY
+SECRET = config.jwt_key.jwt
 
 
 def get_jwt_strategy() -> JWTStrategy:

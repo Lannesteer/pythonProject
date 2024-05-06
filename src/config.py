@@ -1,18 +1,50 @@
+from dataclasses import dataclass
+
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-#data_base
 
-DB_HOST = os.environ.get("DB_HOST")
-DB_PORT = os.environ.get("DB_PORT")
-DB_NAME = os.environ.get("DB_NAME")
-DB_USER = os.environ.get("DB_USER")
-DB_PASS = os.environ.get("DB_PASS")
-JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
+# data_base
+@dataclass
+class DbConfig:
+    host: str
+    port: str
+    name: str
+    user: str
+    password: str
 
-#redis
 
-REDIS_HOST = os.environ.get("REDIS_HOST")
-REDIS_PORT = os.environ.get("REDIS_PORT")
+db_config = DbConfig(
+    host=os.environ.get("DB_HOST"),
+    port=os.environ.get("DB_PORT"),
+    name=os.environ.get("DB_NAME"),
+    user=os.environ.get("DB_USER"),
+    password=os.environ.get("DB_PASS"),
+)
+
+
+# jwt secret key
+@dataclass
+class Jwt:
+    jwt: str
+
+
+jwt_key = Jwt(jwt=os.environ.get("JWT_SECRET_KEY"))
+
+
+# redis
+
+@dataclass
+class RedisConfig:
+    host: str
+    port: str
+
+
+redis_config = RedisConfig(
+    host=os.environ.get("REDIS_HOST"),
+    port=os.environ.get("REDIS_PORT")
+)
+
+
