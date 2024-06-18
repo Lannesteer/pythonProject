@@ -6,7 +6,7 @@ from src.auth.models import User
 from src.base_class import BaseService
 from src.database import get_async_session
 from src.support.models import Ticket
-from src.support.schemas import TicketCreate, TicketAnswer
+from src.support.schemas import TicketCreate
 
 
 class SupportService(BaseService[Ticket]):

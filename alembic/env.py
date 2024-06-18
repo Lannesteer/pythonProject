@@ -17,18 +17,18 @@ from src.catalog import models
 from src.orders import models
 from src.support import models
 
-from src.config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS
+from src.config import db_config
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
 section = config.config_ini_section
-config.set_section_option(section, "DB_HOST", DB_HOST)
-config.set_section_option(section, "DB_PORT", DB_PORT)
-config.set_section_option(section, "DB_NAME", DB_NAME)
-config.set_section_option(section, "DB_USER", DB_USER)
-config.set_section_option(section, "DB_PASS", DB_PASS)
+config.set_section_option(section, "DB_HOST", db_config.host)
+config.set_section_option(section, "DB_PORT", db_config.port)
+config.set_section_option(section, "DB_NAME", db_config.name)
+config.set_section_option(section, "DB_USER", db_config.user)
+config.set_section_option(section, "DB_PASS", db_config.password)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

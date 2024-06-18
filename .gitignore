@@ -1,0 +1,14 @@
+# created by virtualenv automatically
+
+# Ignore virtual environment directory
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore database configuration file
+config.py
+.env
+
+# Other ignore rules...
