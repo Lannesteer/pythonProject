@@ -4,7 +4,7 @@ from redis import asyncio as aioredis
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
-from config import db_config, redis_config, RedisConfig, DbConfig
+from src.config import db_config, redis_config, RedisConfig, DbConfig
 
 
 class Base(DeclarativeBase):

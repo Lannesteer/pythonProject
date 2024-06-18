@@ -10,8 +10,8 @@ from src.sklad.schemas import ProductCreateUpdate
 from src.sklad.service import get_sklad_service, SkladService
 
 router = APIRouter(
-    prefix="/sklad",
-    tags=["sklad_operation"]
+    prefix="/product",
+    tags=["product_operation"]
 )
 
 

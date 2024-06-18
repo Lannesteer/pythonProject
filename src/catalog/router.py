@@ -7,7 +7,7 @@ from src.catalog.schemas import ProductRead
 
 router = APIRouter(
     prefix="/catalog",
-    tags=["catalog operation"]
+    tags=["product_operation"]
 )
 
 
