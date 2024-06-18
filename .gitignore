@@ -8,7 +8,6 @@ __pycache__/
 *.pyc
 
 # Ignore database configuration file
-config.py
 .env
 
 # Other ignore rules...
