@@ -29,13 +29,16 @@ db_config = DbConfig(
 @dataclass
 class Jwt:
     jwt: str
+    algorithm: str
 
 
-jwt_key = Jwt(jwt=os.environ.get("JWT_SECRET_KEY"))
+jwt_key = Jwt(
+    jwt=os.environ.get("JWT_SECRET_KEY")
+    , algorithm=os.environ.get("ALGORITHM")
+)
 
 
 # redis
-
 @dataclass
 class RedisConfig:
     host: str
@@ -46,5 +49,3 @@ redis_config = RedisConfig(
     host=os.environ.get("REDIS_HOST"),
     port=os.environ.get("REDIS_PORT")
 )
-
-

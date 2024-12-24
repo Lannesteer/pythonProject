@@ -2,7 +2,9 @@ from typing import TypeVar, Generic, Type, Optional, Union
 
 from fastapi import HTTPException
 from sqlalchemy import select, update, delete
+
 from sqlalchemy.ext.asyncio import AsyncSession
+
 
 from src.database import Base
 
@@ -55,3 +57,6 @@ class BaseService(Generic[ModelType]):
             await session.execute(delete(self.table).filter_by(id=id_item))
             await session.commit()
         return {'response': 'deleted'}
+
+
+
